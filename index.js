@@ -4,6 +4,7 @@ const cheerioselect = require("cheerio-select");
 const fs = require("fs");
 
 const floridaUrl = "https://www.creditunionsonline.com/credit-unions-in-altamonte-springs-fl.html";
+
 async function unionInfo(city)
 {
     try
@@ -17,11 +18,11 @@ async function unionInfo(city)
         console.error(Exception);
     }
 }
-async function cityUnions(city)
+async function cityUnions(city, state)
 {
     try 
     {
-        const { data } = await axios.get(`https://www.creditunionsonline.com/credit-unions-in-${city}-fl.html`)
+        const { data } = await axios.get(`https://www.creditunionsonline.com/credit-unions-in-${city}-${state}.html`)
         
         const $ = cheerio.load(data);
 
@@ -55,4 +56,4 @@ async function cityUnions(city)
     }
 }
 
-cityUnions("winter-springs");
+cityUnions("orlando", "fl");
