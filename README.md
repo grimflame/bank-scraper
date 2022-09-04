@@ -1,4 +1,4 @@
 # bank-scraper
 US bank web scraper using Node.js  & https://www.bankbranchlocator.com/
 
-Retrieves all credit unions from city & state parameters
+Returns an array of all credit unions from city & state parameters
